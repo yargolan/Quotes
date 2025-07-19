@@ -6,7 +6,7 @@
 
     <groupId>com.ygsoft.apps.quotes</groupId>
     <artifactId>be</artifactId>
-    <name>Application BE</name>
+    <name>AE Quotes BE</name>
 
     <parent>
         <groupId>com.ygsoft.apps</groupId>
@@ -16,6 +16,11 @@
 
 
     <dependencies>
+        <dependency>
+            <groupId>com.ygsoft.apps.quotes</groupId>
+            <artifactId>ui</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
         <!--  Unit tests  -->
         <dependency>

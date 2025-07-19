@@ -6,7 +6,7 @@
 
     <groupId>com.ygsoft.apps.quotes</groupId>
     <artifactId>db</artifactId>
-    <name>Application DB</name>
+    <name>AE Quotes DB</name>
 
     <parent>
         <groupId>com.ygsoft.apps</groupId>
@@ -58,7 +58,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.ygsoft.quotes.AESaidOnce</mainClass>
+                            <mainClass>com.ygsoft.quotes.QuotesUiOnly</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

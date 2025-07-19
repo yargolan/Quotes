@@ -1,10 +1,7 @@
 package com.ygsoft.quotes;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.util.Scanner;
-
-
 
 
 public class AESaidOnce {
@@ -16,18 +13,14 @@ public class AESaidOnce {
 
     public static void main(String[] args) {
 
-        // Set LNF.
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception e) {
-            System.out.println("Cannot set the needed Look-and-feel");
-        }
-
         AESaidOnce aeSaidOnce = new AESaidOnce();
 
 
         // Create an instance of the DbWrapper class.
         DbWrapper dbWrapper = new DbWrapper();
+
+        // Create an instance of the UI class.
+        QuotesUiOnly quotesUiOnly = new QuotesUiOnly();
 
 
         // Get user index and show the quote.
@@ -35,14 +28,16 @@ public class AESaidOnce {
 
 
         // Get the necessary quote from the database.
+        String chosenQuote = "Internal error occurred";
         try {
-            String chosenQuote = dbWrapper.getQuote(index);
-
-            // Show the quote in a dialog.
-            aeSaidOnce.showIt(chosenQuote);
-        } catch (IOException e) {
+            chosenQuote = dbWrapper.getQuote(index);
+        }
+        catch (IOException e) {
             System.err.println(e.getMessage());
         }
+
+        // Show the chosen quote.
+        quotesUiOnly.showIt(chosenQuote);
     }
 
 
@@ -52,17 +47,5 @@ public class AESaidOnce {
         int userIndex = scan.nextInt();
         scan.close();
         return userIndex;
-    }
-
-
-    private void showIt(String theQuote) {
-        if (theQuote != null) {
-            JOptionPane.showMessageDialog(
-                null,
-                theQuote,
-                "A. Einstein once said ...",
-                JOptionPane.PLAIN_MESSAGE
-            );
-        }
     }
 }
