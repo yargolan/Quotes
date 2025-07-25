@@ -13,7 +13,7 @@ public class AESaidOnce {
 
     public static void main(String[] args) {
 
-        AESaidOnce aeSaidOnce = new AESaidOnce();
+        AESaidOnce aeSaidOnce = new AESaidOnce()
 
 
         // Create an instance of the DbWrapper class.

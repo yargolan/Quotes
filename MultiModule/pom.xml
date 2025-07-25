@@ -17,7 +17,7 @@
 
 
     <modules>
-        <module>be</module>
+        <module>bee</module>
         <module>db</module>
         <module>ui</module>
     </modules>
